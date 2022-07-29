@@ -1,0 +1,171 @@
+@extends('layouts.card')
+@section('head')
+<title>测试</title>
+<style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    .list .van-cell *{
+        font-size:16px;
+    }
+    .van-grid-item__text{
+        font-size:14px;
+    }
+    .van-grid-item__icon{
+        font-size:0px;
+    }
+    .van-grid-item__icon img{
+        width:2rem;
+        height:2rem;
+    }
+    .van-grid-item__content .van-grid-item__icon+.van-grid-item__text{
+        margin-top:0px!important;
+    }
+    .van-grid-item__content{
+        padding:10px 8px;
+    }
+    i,em{
+        font-style: normal;
+        font-weight: normal;
+    }
+    body{
+        background:#f0f0f0;
+    }
+    #container{
+        /* padding-bottom: 50px; */
+        font-size:16px;
+    }
+    .best-num{
+        display:flex;
+        /* align-items:center; */
+        /* height:320px; */
+    }
+    .card-items{
+        /* height:220px; */
+        
+        box-sizing: border-box;
+    }
+    .card-item{
+        margin:10px;
+        height:220px;
+        box-sizing: border-box;
+        overflow: auto;
+    }
+    
+    .list{
+        border-radius:5px;
+        margin:0 5px;
+        margin-bottom:10px;
+        background:#fff;
+    }
+
+    .prick-items{
+        background:#fff;
+    }
+    .prick-item{
+        /* border-bottom:1px solid #ebedf0; */
+        display:flex;
+        align-items: center;
+        font-size:14px;
+        padding: 5px;
+    }
+    .prick-item img{
+        /* width:55px; */
+        height:55px;
+        border-radius:5px;
+        margin-right:5px;
+        /* padding:5px; */
+        box-sizing: border-box;
+    }
+    .prick-item .prick-name{
+        color:#fa6016;
+        font-size:14px;
+    }
+    .prick-item .prick-desc{
+        color:#999;
+        font-size:12px;
+        text-overflow: -o-ellipsis-lastline;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        line-height: 16px;
+    }
+    .prick-item .prick-desc>div{
+        padding:0;
+        height: 20px;
+    }
+    .prick-right{
+        flex:1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-right:10px;
+        height: 55px;
+    }
+    .card_title{
+        padding:40px;
+    }
+
+</style>
+@endsection
+@section('content')
+<div id="container">
+    <div class="card" style="
+    text-align: center;
+">
+                <div class="card_title">
+                    这是H5页面  
+                </div>
+                <div style="margin:10px 0;">
+                    <button v-if='guanzhu == 1' @click="toGuanzhu">取消关注</button>
+                    <button v-else @click="toGuanzhu">点击关注</button>
+                </div>
+                <button type="submit" style="text-align:center" @click="gotoPage">点击跳转小程序</button>
+            </div>
+</div>
+@endsection
+@section('script')
+
+<script type="text/javascript">
+    new Vue({
+        el:"#app",
+        data:{
+            active: 0,
+            static_domain:'https://msgoxyz.oss-cn-beijing.aliyuncs.com',
+            guanzhu:0,
+        },
+        created() {
+            this.guanzhu = this.api.getQueryString('guanzhu');
+		},
+		onReady() {
+			
+		},
+		onShow(){
+		    console.log(456)
+		},
+		methods: {
+			gotoPage(url){
+                url += (this.api.getQueryString('xcx') ? '&xcx=1' : '');
+                this.api.isMiniProgram((res)=>{//判断是否是小程序页面的回调函数
+                    if (res) {//小程序页面
+                        wx.miniProgram.postMessage({ data: 'foo' })
+                        wx.miniProgram.navigateTo({url: '/pages/detail/detail?url=' + escape(window.location.origin+url)});
+                    } else {
+                        window.location.href= url;
+                    }
+                })
+                
+            },
+            toGuanzhu(){
+                // wx.miniProgram.postMessage({ data: 'foo' })
+                wx.miniProgram.navigateTo({url: '/pages/guanzhu/guanzhu'});
+                window.setTimeout(()=>{this.guanzhu = (this.guanzhu == 0 ? 1 : 0)},500)
+            }
+		}
+    })
+</script>
+@endsection

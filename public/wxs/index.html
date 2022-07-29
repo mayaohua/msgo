@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>话费充值</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../wx/css/mui.min.css">
+		<link rel="stylesheet" href="../wx/css/loading.css">
+		<!--App自定义的css-->
+		<!-- <link rel="stylesheet" type="text/css" href="../css/app.css"/> -->
+		<style>
+			*{
+				padding:0 ;
+				margin: 0;
+				list-style: none;
+			}
+			.mui-card-header{
+				font-size: 15px;
+			}
+			.title{
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+			}
+			
+			.oa-contact-cell.mui-table .mui-table-cell {
+				padding: 11px 0;
+				vertical-align: middle;
+			}
+			
+			.oa-contact-cell {
+				position: relative;
+				margin: -11px 0;
+			}
+	
+			.oa-contact-avatar {
+				width: 75px;
+			}
+			.oa-contact-avatar img {
+				border-radius: 50%;
+			}
+			.oa-contact-content {
+				width: 100%;
+			}
+			.oa-contact-name {
+				margin-right: 20px;
+			}
+			.oa-contact-name, oa-contact-position {
+				float: left;
+			}
+			
+		</style>
+		<style>
+			.mui-control-content {
+				background-color: white;
+				/* min-height: 215px; */
+			}
+			.mui-control-content .mui-loading {
+				margin-top: 50px;
+			}
+			.ui-bill-detail{
+				display: flex;
+				align-items: flex-start;
+				flex-wrap: wrap;
+				flex-direction: column;
+				margin-top: 10px;
+			}
+			
+			.ui-card ul{
+				width: 100%;
+			}
+			.ui-card ul li{
+				
+				
+			}
+			.ui-card ul li .ui-item{
+				border: 1px solid #19ad17;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				border-radius: 4px;
+				margin: 5px;
+			}
+			.ui-card ul li span{
+				color:#19ad17;
+				display: block;
+			}
+			.ui-card li .time{
+				background:#19ad17;
+				color:white;
+				align-self: flex-start;
+				padding: 0 5px;
+				border-bottom-right-radius: 4px;
+			}
+			.mui-slider .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{
+				border-bottom: 2px solid #007aff;
+			}
+			.ui-fankui .mui-input-row{
+				height: auto;
+			}
+			.ui-fankui .mui-input-row{
+				display: flex;
+				flex-direction: column;
+				
+			}
+			.ui-fankui .mui-input-row label{
+				font-size: 14px;
+				color: #666;
+				width: 100%;
+				padding:10px 5px;
+			}
+			.ui-fankui .mui-input-row textarea,.ui-fankui .mui-input-row input{
+				padding:10px 15px;
+				font-size: 15px;
+				width: 100%;
+			}
+			.ui-no-list{
+				padding:40px 0;
+				text-align: center;
+			}
+			.mui-slider-indicator .mui-indicator{
+				margin: 1px 2px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="app">
+			<nav class="mui-bar mui-bar-tab" id="But">
+				<a class="mui-tab-item mui-active" href="#tabbar">
+					<span class="mui-icon mui-icon-phone"></span>
+					<span class="mui-tab-label">话费充值</span>
+				</a>
+				<a class="mui-tab-item" href="#tabbar-with-chat">
+					<span class="mui-icon mui-icon-bars"></span>
+					<span class="mui-tab-label">充值记录</span>
+				</a>
+				<a class="mui-tab-item haoma" data-url="https://wx.1001020.cn/h5" >
+					<span class="mui-icon mui-icon-download"></span>
+					<span class="mui-tab-label">免费流量卡</span>
+				</a>
+				<a class="mui-tab-item" href="#tabbar-with-contact">
+					<span class="mui-icon mui-icon-email"></span>
+					<span class="mui-tab-label">反馈建议</span>
+				</a>
+			</nav>
+			<div class="mui-content">
+				<div id="tabbar" class="mui-control-content mui-active">
+					<div v-if="bannerArr.length">
+						<div class="mui-slider" id="ui-banner" >
+							<div class="mui-slider-group mui-slider-loop">
+								<div class="mui-slider-item mui-slider-item-duplicate"><a :href="bannerArr[bannerArr.length-1].url"><img :src="bannerArr[bannerArr.length-1].src" /></a></div>
+								<div class="mui-slider-item" v-for="(item,index) in bannerArr" :class="index == 0 ? 'mui-active' : ''"><a :href="item.url"><img :src="item.src" /></a></div>
+								<div class="mui-slider-item mui-slider-item-duplicate"><a :href="bannerArr[0].url"><img :src="bannerArr[0].src" /></a></div>
+							</div>
+							<div class="mui-slider-indicator">
+								<div class="mui-indicator" v-for="(item,index) in bannerArr" :class="index == 0 ? 'mui-active' : ''"> </div>
+							</div>
+						</div>
+					</div>
+					
+					<div id="slider" class="mui-slider">
+						<div style="padding: 10px 10px;">
+							<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
+								<a class="mui-control-item" :class="index == model_case_index ? 'mui-active' : ''" v-for="(item,index) in tableData" :href="'#item'+(index+1)" v-show="item['is_show']">{{item.name}}</a>
+							</div>
+						</div>
+						<div>
+							<div class="mui-input-row mui-search" ref="search" style="margin-top: 15px;">
+								<input  maxlength="11" v-model="mobile" @input="inputFunc" type="search" class="mui-input-clear my-search" placeholder="请输入手机号码">
+							</div>
+						</div>
+						<div id="segmentedControlC">
+							<div class="mui-control-content" :class="index == model_case_index ? 'mui-active' : ''" v-for="(itema,index) in tableData" :id="'item'+(index+1)">
+								<div class="mui-card" v-for="(item,index) in itema['data']" v-if="hasItem(item)">
+									<div class="mui-card-header">{{item['name']}} <span style="float: right;" @click="showDesc(item['desc'])">详情</span></div>
+									<div class="mui-card-content ui-card bill-warp">
+										<ul class="mui-row">
+											<li class="mui-col-sm-4 mui-col-xs-4" v-for="(item,index) in item['data']" v-if="item['status'] == 2 && item['is_show']" @click="billPay(item)">
+												<div class="ui-item">
+													<span class="time" style="font-size: 12px;">{{item['info']}}</span>
+													<span style="margin:5px 0;" class="old_num">{{item['itemFacePrice']/1000}}元</span>
+													<span class="now_num">售价{{item['itemSalesPrice']/1000}}元</span>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								
+								
+							</div>
+						</div>
+				  </div>
+				</div>
+				<div id="tabbar-with-chat" class="mui-control-content">
+
+					<div v-if="userBillData.length == 0" class="ui-no-list">暂无记录</div>
+					<ul v-else class="mui-table-view">
+						<li class="mui-table-view-cell mui-media" v-for="item in userBillData">
+							<a href="javascript:;">
+									
+								<div class="mui-media-body">
+									{{item.bill_data.itemName}}
+									<span class="mui-badge mui-badge-success" style="float: right;" v-if="item.bill_status == 0">付款确认中</span>
+									<span class="mui-badge mui-badge-success" style="float: right;" v-if="item.bill_status == 1">支付成功</span>
+									<span class="mui-badge mui-badge-success" style="float: right;" v-if="item.bill_status == 2">支付失败</span>
+									<span class="mui-badge mui-badge-success" style="float: right;" v-if="item.bill_status == 3">充值成功</span>
+									<span class="mui-badge mui-badge-success" style="float: right;" v-if="item.bill_status == 4">充值失败</span>
+									<span class="mui-badge mui-badge-success" style="float: right;" v-if="item.bill_status == 5">话费充值中</span>
+									<span class="mui-badge mui-badge-success" style="float: right;" v-if="item.bill_status == 6">退款中</span>
+									<span class="mui-badge mui-badge-success" style="float: right;" v-if="item.bill_status == 7">退款成功</span>
+									<span class="mui-badge mui-badge-success" style="float: right;" v-if="item.bill_status == 8">退款失败</span>
+									<p class="ui-bill-detail">
+										<span>订单号：{{item.bill_seria_ino}}</span>
+										<span>充值手机号：{{item.bill_mobile}}</span>
+										<span>充值金额：{{item.bill_money/1000}}元</span>
+										<span>充值时间：{{item.created_at}}</span>
+									</p>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div id="tabbar-with-contact" class="mui-control-content">
+					<form name="Suggest" class="mui-input-group ui-fankui" enctype="multipart/form-data" onSubmit="return false;">
+						<div class="mui-input-row">
+							<label>意见和建议</label>
+							<textarea maxlength="120"  name="kui_content"  placeholder="请输入要反馈建议的内容"></textarea>
+						</div>
+						<div class="mui-input-row">
+							<label>图片上传</label>
+							<input type="file" name="kui_files" id="upload-file1"  accept='image/*'>
+						</div>
+						<div class="mui-input-row">
+							<label>联系方式</label>
+							<input type="number" name="kui_contact" class="mui-input-clear" placeholder="选填,请输入联系方式">
+						</div>
+						<div class="mui-button-row" style="margin-top: 10px;">
+							<button onClick="fankuiAction()" type="button" class="mui-btn mui-btn-primary" >确认</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+	<script src="../js/axios.min.js"></script>
+	<script src="../js/vue.js"></script>
+	<script src="../wx/js/mui.min.js"></script>
+	<script src="../wx/js/loading.js"></script>
+	<script src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+	<script>
+		var my_loading = null;
+		axios.interceptors.request.use(
+			config => {
+				my_loading = mui.showLoading("拼命加载中..","div");
+				return config;
+			},
+			error => {
+				return Promise.error(error);
+			}
+		);
+
+		axios.interceptors.response.use(
+			response => {
+				mui.hideLoading();
+				if (response.status === 200) {
+					if(response.data.code === 0){
+						// mui.toast(response.data.msg);
+					}else{
+						mui.toast(response.data.msg);
+					}
+					return Promise.resolve(response.data);
+				} else {
+					return Promise.reject(response.data);
+				}
+			},
+			error => {
+				mui.hideLoading();
+				if (error.response.status) {
+				switch (error.response.status) {
+					case 403:
+					mui.toast("无权访问");
+					break;
+					case 404:
+					mui.toast("请求地址不存在");
+					break;
+					case 405:
+					mui.toast("请求地址不存在");
+					break;
+					case 500:
+					mui.toast("系统错误");
+					break;
+					default:
+					mui.toast("内部错误");
+				}
+				return Promise.reject(error.response);
+				}
+			}
+		);
+		Vue.prototype.$axios = axios;
+	</script>
+	<script type="text/javascript">
+        var app = new Vue({
+            el: "#app",
+            data: {
+				tableData: [],
+				mobile:'',
+				address:null,
+				model_case_index:0,
+				is_clear:false,
+				userBillData:[],
+				bannerArr:[
+					{src:'../wx/images/6c762e9eb802af28c3c6eb3bdf06360.jpg',url:""},
+					{src:'../wx/images/21b487f5270ef23a5593f90aed37e8e.jpg',url:""},
+					{src:'../wx/images/cd45427744a3920ae9c176bfbfbea6d.jpg',url:""}
+				],
+			},
+			created(){
+				// this.$axios.get('/api/wxpay/gonggao').then((res) => {
+				// 	if (res.code === 0) {
+				// 		this.bannerArr = res.data
+				// 	}
+				// })
+				// this.$axios.get('/api/BillCase/list').then((res) => {
+				// 	if (res.code === 0) {
+				// 		this.tableData = res.data
+				// 	}
+				// })
+				this.getOpenId(()=>{
+					this.billPay();
+				})
+				
+			},
+			mounted() {
+				this.$nextTick(() => {
+					var that = this;
+					mui('.my-search')[0].addEventListener('focus', function(){
+				　　　　　mui(".mui-icon-clear")[0].addEventListener('tap',function(){
+					　　　　　　　that.mobile = '';	 
+					　　　　　　　that.clearShow();
+				　　　　 });
+					})
+				})
+			},
+			computed: {
+				hasItem:function (){
+					return function(item){
+						if(item['data'].length == 0){
+							return false;
+						}
+						let newArr = item['data'].filter(ite => ite.status == 2 && ite.is_show);
+						return newArr.length ? true : false;
+					}
+				}
+			},
+            methods: {
+                handleME(row, column, cell, event) {},
+				handleML(row, column, cell, event) {},
+				getOpenId(func){
+					if (sessionStorage.getItem("openid")&&sessionStorage.getItem("openid")!="undefined") {
+						func && func();
+						return false;
+					}
+					var code = this.getQueryString('code');
+					this.$axios.post('/api/getOpenid',{code:code}).then((res) => {
+						if (res.code == -1) {
+							alert('获取失败');
+							return;
+						}else if (res.code == -2) {
+							// 提示没有关注公众号 没有关注公众号跳转到关注公众号页面
+							console.log('您还未关注公众号喔');
+							//二维码弹窗
+							$('.openPopup').click();
+							return;
+						}else if (res.code == 0) {
+							// 本地存储这个openid，并刷新页面
+							sessionStorage.setItem("openid", res.data.openid);
+							console.log('成功');
+							func && func();
+						}
+					}).catch(err=>{
+						alert('失败');
+					});
+				},
+				getQueryString(name) {
+					var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+					var r = window.location.search.substr(1).match(reg);
+					if (r != null) {
+					return unescape(r[2]);
+					}
+					return null;
+				},
+                inputFunc(d){
+					this.mobile=this.mobile.replace(/[^\d]/g,'')
+					if(this.mobile.length == 11){
+						this.blurFunc()
+					}else{
+						this.clearShow();
+					}
+					// if(this.mobile.length == 12)
+				},
+				getUserBills(){
+					var openid = sessionStorage.getItem("openid");
+					if(!openid){
+						alert('openid获取失败');
+					}
+					this.$axios.post('/api/wxpay/userBills',{openid:openid}).then((res) => {
+						if (res.code === 0) {
+							this.userBillData = res.data
+						}
+					});
+				},
+				blurFunc(){
+					this.address = null
+					this.$axios.get('/api/vmobile?mobile='+this.mobile).then((res) => {
+						if (res.code === 0) {
+							let xx = 0
+							for (let i = 0; i < this.tableData.length; i++) {
+								const n = this.tableData[i];
+								if(n.name == res.data.sp){
+									n.is_show = true;
+									xx = i
+									for(var u in n.data){
+										var x = n.data[u]
+										for (var cc in x.data) {
+											cc = x.data[cc]
+											if(cc.areaCodeDesc== res.data.province || cc.areaCodeDesc == res.data.city || cc.areaCode == '111111'){
+												cc.is_show = true;
+											}else{
+												cc.is_show = false;
+											}
+											//console.log(cc.areaCodeDesc +'='+res.data.province+'||'+res.data.city +cc.is_show)
+										}
+									}
+								}else{
+									n.is_show = false;
+								}
+								
+							}
+							this.$nextTick(() => {
+								$('#segmentedControl').find('a').removeClass('mui-active').css('display','none');
+								$('#segmentedControlC').find('.mui-control-content').removeClass('mui-active');
+								$('#segmentedControl').find('a').eq(xx).addClass('mui-active').css('display','table-cell');
+								$('#segmentedControlC').find('.mui-control-content').eq(xx).addClass('mui-active');
+							})
+							this.is_clear = true;
+							// console.log(123)
+							this.address = res.data
+						}
+					})
+
+					
+				},
+				clearShow(){
+					if(!this.is_clear){return;}
+					for (let i = 0; i < this.tableData.length; i++) {
+						const n = this.tableData[i];
+						n.is_show = true;
+						for(var u in n.data){
+							var x = n.data[u]
+							for (var cc in x.data) {
+								cc = x.data[cc]
+								cc.is_show = true;
+							}
+							x.is_show = true;
+						}
+					}
+					this.$nextTick(() => {
+						$('#segmentedControl').find('a').removeClass('mui-active').css('display','table-cell');
+						$('#segmentedControlC').find('.mui-control-content').removeClass('mui-active');
+						$('#segmentedControl').find('a').eq(0).addClass('mui-active').css('display','table-cell');
+						$('#segmentedControlC').find('.mui-control-content').eq(0).addClass('mui-active');
+					})
+					this.is_clear = false
+					this.address = null;
+				},
+				changeTab(index){
+					var btn = $('.mui-bar').find('a').eq(index)[0];
+					console.log(btn)
+					// //监听点击事件
+					// // btn.addEventListener("tap",function () {
+					// // 	console.log("tap event trigger");
+					// // });
+					// //触发submit按钮的点击事件
+					// mui.trigger(btn,'tap');
+				},
+				billPay(){
+					// if(!this.is_clear){
+					// 	mui.toast('请输入要充值的手机号');
+					// 	return ;
+					// }
+					let item = {openid:''}
+					item.openid = sessionStorage.getItem("openid");
+					var that = this;
+					this.$axios.post('/api/wxpay',item).then((res) => {
+						function onBridgeReady(){
+							var order_id = res.data.order_id
+							WeixinJSBridge.invoke(
+								'getBrandWCPayRequest', res.data,
+								function(res){
+								if(res.err_msg == "get_brand_wcpay_request:ok" ){
+									alert('支付成功');
+									//支付成功
+									that.getUserBills();
+									that.changeTab(1)
+								}else{
+									//取消支付
+									alert('取消支付');
+									that.$axios.post('/api/wxpay/cancelOrder',{oid:order_id}).then(res=>{
+										that.getUserBills();
+										that.changeTab(1)
+									})
+								} 
+							}); 
+						}
+						if (typeof WeixinJSBridge == "undefined"){
+							if( document.addEventListener ){
+								document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+							}else if (document.attachEvent){
+								document.attachEvent('WeixinJSBridgeReady', onBridgeReady); 
+								document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+							}
+						}else{
+							onBridgeReady();
+						}
+					})
+				},
+				showDesc(text){
+					mui.alert(text,'产品详情','我知道了')
+				}
+
+			},
+        })
+
+    </script>
+	<script>
+		
+		mui.init({
+			swipeBack:false //启用右滑关闭功能
+		});
+		var gallery = mui('#ui-banner');
+		gallery.slider({
+			interval:5000//自动轮播周期，若为0则不自动播放，默认为0；
+		});
+		// mui(".haoma").on("tap","#But",billAction);
+		// function billAction(){
+		// 	console.log(123)
+		// }
+		$('#ui-banner .mui-slider-item').click(function(){
+			// console.log(this)
+			// alert(1)
+			// window.location.href= this.dataset.url
+		})
+		$('#But .haoma').click(function(){
+			window.location.href= this.dataset.url
+		})
+		function fankuiAction(){
+			
+			var sug = document.forms["Suggest"];
+			var kui_content = sug['kui_content'].value;
+			var kui_files = sug['kui_files'].files;
+			var kui_contact = sug['kui_contact'].value;
+			var data = {
+				kui_content:kui_content,
+				kui_files: kui_files,
+				kui_contact:kui_contact
+			}
+			if(kui_content.length<10){
+				mui.alert('最少输入10个字符');return false;
+			}
+			var formData = new FormData(sug);
+			formData.append('openid',sessionStorage.getItem("openid"));
+			mui.showLoading("正在加载..","div");
+			$.ajax({
+				type: 'POST',
+				dataType: 'json',
+				url: '/api/Suggest/put',
+				async: false,
+				data: formData,
+				processData : false, // 使数据不做处理
+				contentType : false, // 不要设置Content-Type请求头
+				success: function (res) {
+					if(res.code == 0){
+						mui.toast('感谢反馈',{ duration:'long', type:'div' })
+					}else{
+						mui.toast(res.msg,{ duration:'long', type:'div' })
+					}
+					mui.hideLoading();
+					return false;
+				},
+				fail:function(error){
+					console.log(error)
+					mui.toast('内部错误',{ duration:'long', type:'div' })
+					mui.hideLoading();
+					return false;
+				}
+			});
+			return false;
+		}
+		
+	</script>
+	<script>
+		
+	</script>
+</html>

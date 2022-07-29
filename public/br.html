@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<body class="">
+    
+</body>
+<script src="/logins/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/br/md5.js"></script>
+	<script type="text/javascript" src="/br/BigInt.js"></script>
+	<script type="text/javascript" src="/br/Barrett.js"></script>
+	<script type="text/javascript" src="/br/RSA.js"></script>
+
+	<script type="text/javascript">
+        const getQueryString = function(name) {
+            var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) {
+            return unescape(r[2]);
+            }
+            return null;
+        }
+        const getCode = function(empoent,module){
+            setMaxDigits(130);
+            var key = new RSAKeyPair(empoent, "", module);
+            var pwd = 'mayh1111'
+            var result = encryptedString(key, encodeURIComponent(CryptoJS.MD5(pwd + "longan_login")));
+            return result;
+        }
+        // $('#A').html(result);
+	</script>
+
+
+</html>

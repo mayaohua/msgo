@@ -1,0 +1,510 @@
+{
+    "error": 0,
+    "flow_list": {
+        "10000": [
+            {
+                "id": 20,
+                "name": "全国电信流量特惠包",
+                "is_yzm": 0,
+                "short_desc": "",
+                "sp_type": 3,
+                "desc_content": "<p>全国电信国内流量介绍： <br>1.【充值对象】：全国电信用户； <br>2.【流量类型】：4G、3G、2G通用网络流量； <br>3.【使用范围】：全国通用流量，全天24小时，不分时段； <br>4.【充值限制】：可无限次充值； <br>5.【注意事项】：流量充值无法进行冲正，请务必填写正确的手机号码，如填写错误损失自行负责； <br>6.【到帐时间】：一般1-10分钟到账，24小时后充值流量生效；24小时内还查不到流量到帐的或者漏充的，请联系客服处理； <br>7.【查询方式】：电信查询发送702到10001查询</p><p><br></p>",
+                "isp": "10000",
+                "package_list": [
+                    {
+                        "id": 184,
+                        "package": "2G日包",
+                        "sale_price": "11.80",
+                        "is_hot": 1,
+                        "order_tips": "",
+                        "yh_tips": "",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 20
+                    },
+                    {
+                        "id": 260,
+                        "package": "3G3天",
+                        "sale_price": "17.30",
+                        "is_hot": 1,
+                        "order_tips": "",
+                        "yh_tips": "",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 20
+                    },
+                    {
+                        "id": 68,
+                        "package": "5G7天",
+                        "sale_price": "22.30",
+                        "is_hot": 1,
+                        "order_tips": "",
+                        "yh_tips": "",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 20
+                    },
+                    {
+                        "id": 598,
+                        "package": "10G5天",
+                        "sale_price": "24.00",
+                        "is_hot": 0,
+                        "order_tips": "",
+                        "yh_tips": "热销",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 20
+                    }
+                ]
+            },
+            {
+                "id": 21,
+                "name": "全国电信流量",
+                "is_yzm": 0,
+                "short_desc": "全国电信流量，月底清零",
+                "sp_type": 3,
+                "desc_content": "<p>【充值对象】：仅限全国电信2G/3G/4G手机用户充值；<br>【有效期限】：月底清零；<br>【流量类型】：全国2G/3G/4G流量；<br>【使用范围】：所充值流量全国范围内使用；<br>【充值限制】：流量王、随心王和转品牌套餐不得使用；<br>【注意事项】：由于用户误填写手机号码后充入别人账号，责任用户自行承担；<br>【特殊情况】：此产品只能充值全国电信的手机号，移动联通号码一概不支持；<br>【到帐时间】：一般10分钟左右，最晚不超过24小时，若不到账，请24小时后联系我们；<br>【查询方式】：发送702至10001查询；<br>【其他问题】：充值成功一般有短信提醒，若未收到短信可咨询10001查询流量情况（流量查询）；流量无法抵扣超出的流量及话费！</p><p><br></p>",
+                "isp": "10000",
+                "package_list": [
+                    {
+                        "id": 73,
+                        "package": "500M",
+                        "sale_price": "10.46",
+                        "is_hot": 0,
+                        "order_tips": "",
+                        "yh_tips": "",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 21
+                    },
+                    {
+                        "id": 183,
+                        "package": "2G",
+                        "sale_price": "20.61",
+                        "is_hot": 0,
+                        "order_tips": "",
+                        "yh_tips": "",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 21
+                    },
+                    {
+                        "id": 211,
+                        "package": "6G",
+                        "sale_price": "41.22",
+                        "is_hot": 0,
+                        "order_tips": "",
+                        "yh_tips": "",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 21
+                    }
+                ]
+            }
+        ],
+        "10010": [
+            {
+                "id": 32,
+                "name": "广东联通流量特惠包",
+                "is_yzm": 0,
+                "short_desc": "",
+                "sp_type": 2,
+                "desc_content": "<p>【充值对象】广东联通用户<br>【有 效 期】充值成功起算7天，省内流量<br>【使用范围】广东国内2G,3G,4G通用流量（不含港澳台）全天不分时段<br>【充值限制】无限次数<br>【注意事项】无需扣话费<br>【充值方式】一次性到账，无需接收验证码</p><p><br></p>",
+                "isp": "10010",
+                "package_list": [
+                    {
+                        "id": 372,
+                        "package": "1G日包",
+                        "sale_price": "4.55",
+                        "is_hot": 1,
+                        "order_tips": "",
+                        "yh_tips": "当天有效",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 32
+                    },
+                    {
+                        "id": 373,
+                        "package": "3G3天",
+                        "sale_price": "9.11",
+                        "is_hot": 1,
+                        "order_tips": "",
+                        "yh_tips": "3天有效期",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 32
+                    },
+                    {
+                        "id": 374,
+                        "package": "4G7天",
+                        "sale_price": "14.58",
+                        "is_hot": 1,
+                        "order_tips": "",
+                        "yh_tips": "7天有效期",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 32
+                    },
+                    {
+                        "id": 375,
+                        "package": "10G7天",
+                        "sale_price": "27.33",
+                        "is_hot": 1,
+                        "order_tips": "",
+                        "yh_tips": "7天有效期",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 32
+                    },
+                    {
+                        "id": 594,
+                        "package": "60G",
+                        "sale_price": "96.00",
+                        "is_hot": 1,
+                        "order_tips": "",
+                        "yh_tips": "90天有效期",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 32
+                    },
+                    {
+                        "id": 595,
+                        "package": "200G",
+                        "sale_price": "184.00",
+                        "is_hot": 1,
+                        "order_tips": "",
+                        "yh_tips": "180天有效期",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 32
+                    },
+                    {
+                        "id": 596,
+                        "package": "360G",
+                        "sale_price": "282.00",
+                        "is_hot": 1,
+                        "order_tips": "",
+                        "yh_tips": "365天有效期",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 32
+                    }
+                ]
+            },
+            {
+                "id": 121,
+                "name": "全国联通流量",
+                "is_yzm": 0,
+                "short_desc": "",
+                "sp_type": 2,
+                "desc_content": "<p>【充值对象】：仅限全国联通2G/3G/4G手机用户充值；<br>【流量类型】：全国联通2G/3G/4G流量；<br>【使用范围】：所充值流量全国范围内使用；<br>【充值限制】：流量王、随心王和转品牌套餐不得使用；<br>【注意事项】：由于用户误填写手机号码后充入别人账号，责任用户自行承担；<br>【特殊情况】：此产品只能充值全国联通的手机号，移动电信一概不支持；<br>【到帐时间】：一般10分钟左右，最晚不超过24小时，若不到账，请24小时后联系我们；<br>【查询方式】：发送CXLL至10010查询；<br>【其他问题】：充值成功一般有短信提醒，若未收到短信可咨询10010查询流量情况（流量查询）；流量无法抵扣超出的流量及话费！&nbsp;&nbsp;<br></p><p><br></p>",
+                "isp": "10010",
+                "package_list": [
+                    {
+                        "id": 585,
+                        "package": "500M日包",
+                        "sale_price": "4.92",
+                        "is_hot": 1,
+                        "order_tips": "",
+                        "yh_tips": "",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 121
+                    },
+                    {
+                        "id": 586,
+                        "package": "1G日包",
+                        "sale_price": "6.88",
+                        "is_hot": 1,
+                        "order_tips": "",
+                        "yh_tips": "",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 121
+                    },
+                    {
+                        "id": 587,
+                        "package": "2G3天",
+                        "sale_price": "11.80",
+                        "is_hot": 1,
+                        "order_tips": "",
+                        "yh_tips": "",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 121
+                    },
+                    {
+                        "id": 588,
+                        "package": "4G7天",
+                        "sale_price": "15.73",
+                        "is_hot": 1,
+                        "order_tips": "",
+                        "yh_tips": "热销",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 121
+                    },
+                    {
+                        "id": 597,
+                        "package": "10G7天",
+                        "sale_price": "31.00",
+                        "is_hot": 1,
+                        "order_tips": "",
+                        "yh_tips": "热销",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 121
+                    }
+                ]
+            }
+        ],
+        "10086": [
+            {
+                "id": 67,
+                "name": "移动活动流量",
+                "is_yzm": 1,
+                "short_desc": "",
+                "sp_type": 1,
+                "desc_content": "<p>产品详情<br>【充值对象】广东移动用户 2/3/4G通用流量<br>【使用范围】通用流量(不含港澳台)全天不分时段<br>【查询方式】发CXLL到10086查询国内通用流量或登陆移动网上营业厅查询<br>【常见问题】充值成功后未收短信,属于正常情况,不影响到账,可以发送CXLL到10086查询到账在使用【特殊情况会延迟到账，一般不超过1小时】<br>注意：副卡，携号转网，欠费停机的号码无法办理<br><br></p><p><br></p>",
+                "isp": "10086",
+                "package_list": [
+                    {
+                        "id": 528,
+                        "package": "2G7天",
+                        "sale_price": "2.88",
+                        "is_hot": 1,
+                        "order_tips": "[可以多次办理，国内通用流量2G，7天有效]，需要验证码，会开通和彩云业随后系统会立即自动取消，不会扣费，介意勿充，提交验证码，代表您授权公众号使用该验证码办理业务，公众号也应严格按照充值套餐办理正确的业务",
+                        "yh_tips": "不扣话费",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 67
+                    },
+                    {
+                        "id": 584,
+                        "package": "10G7天",
+                        "sale_price": "5.89",
+                        "is_hot": 1,
+                        "order_tips": "本产品将会先办理套餐后自动退订，接受的亲再下单哟!!1、到账10G流量包，七天有效 2、提交充值提示成功后，建议等待短信通知到账后再使用，一般到账时间在5-30分钟内3、充值号码需保持状态正常，余额10元以上（不然会收不到第二个验证码），如号码欠费、停机、销户等异常状态，将导致充值无法到账 4、如有其他疑问，详询店铺客服 5.全球通！及副卡！用户请不要拍取，会进行扣款",
+                        "yh_tips": "不扣话费",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 67
+                    },
+                    {
+                        "id": 429,
+                        "package": "5G3天",
+                        "sale_price": "1.00",
+                        "is_hot": 1,
+                        "order_tips": "温馨提示：此套餐不扣话费！流量3天有效期，每个号码限制办理1次，不可重复办理。",
+                        "yh_tips": "不扣话费",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 67
+                    },
+                    {
+                        "id": 514,
+                        "package": "10G7天",
+                        "sale_price": "2.00",
+                        "is_hot": 1,
+                        "order_tips": "[温馨提示：该套餐充值成功后需要扣10元话费，话费不返还，同意再充值，介意勿拍！流量7天有效期，可重复办理。充值失败是不会扣话费。]",
+                        "yh_tips": "扣10元话费",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 67
+                    },
+                    {
+                        "id": 513,
+                        "package": "2G7天",
+                        "sale_price": "1.00",
+                        "is_hot": 1,
+                        "order_tips": "[需扣5元手机话费] 介意勿拍！",
+                        "yh_tips": "扣5元话费",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 67
+                    }
+                ]
+            },
+            {
+                "id": 41,
+                "name": "广东移动流量热销产品",
+                "is_yzm": 0,
+                "short_desc": "7天有效",
+                "sp_type": 1,
+                "desc_content": "<p>【充值对象】：仅限广东移动2G/3G/4G手机用户充值；<br>【有效期限】：看菜单栏；<br>【流量类型】：省内2G/3G/4G流量；<br>【使用范围】：所充值流量全国范围内使用；<br>【充值限制】：流量王、随心王和转品牌套餐不得使用；<br>【注意事项】：由于用户误填写手机号码后充入别人账号，责任用户自行承担；<br>【特殊情况】：此产品只能充值广东省移动的手机号，其他省份一概不支持；<br>【到帐时间】：一般10分钟左右，最晚不超过24小时，若不到账，请24小时后联系我们；<br>【查询方式】：发送CXLL至10086查询；<br>【其他问题】：充值成功一般有短信提醒，若未收到短信可咨询10086查询流量情况（流量查询）；流量无法抵扣超出的流量及话费！</p><p><br></p>",
+                "isp": "10086",
+                "package_list": [
+                    {
+                        "id": 199,
+                        "package": "1G日包",
+                        "sale_price": "2.65",
+                        "is_hot": 1,
+                        "order_tips": "",
+                        "yh_tips": "",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 41
+                    },
+                    {
+                        "id": 430,
+                        "package": "1G7天",
+                        "sale_price": "4.50",
+                        "is_hot": 1,
+                        "order_tips": "",
+                        "yh_tips": "",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 41
+                    },
+                    {
+                        "id": 202,
+                        "package": "2G7天",
+                        "sale_price": "6.70",
+                        "is_hot": 1,
+                        "order_tips": "",
+                        "yh_tips": "",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 41
+                    },
+                    {
+                        "id": 257,
+                        "package": "5G7天",
+                        "sale_price": "13.20",
+                        "is_hot": 1,
+                        "order_tips": "",
+                        "yh_tips": "热销",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 41
+                    },
+                    {
+                        "id": 575,
+                        "package": "20G7天",
+                        "sale_price": "23.50",
+                        "is_hot": 1,
+                        "order_tips": "",
+                        "yh_tips": "热销",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 41
+                    },
+                    {
+                        "id": 411,
+                        "package": "1G30天",
+                        "sale_price": "8.00",
+                        "is_hot": 1,
+                        "order_tips": "",
+                        "yh_tips": "30天有效",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 41
+                    },
+                    {
+                        "id": 410,
+                        "package": "5G30天",
+                        "sale_price": "19.50",
+                        "is_hot": 1,
+                        "order_tips": "",
+                        "yh_tips": "30天有效",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 41
+                    },
+                    {
+                        "id": 574,
+                        "package": "10G月底清零",
+                        "sale_price": "33.00",
+                        "is_hot": 1,
+                        "order_tips": "",
+                        "yh_tips": "月底清零",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 41
+                    }
+                ]
+            },
+            {
+                "id": 89,
+                "name": "全国移动流量热销产品",
+                "is_yzm": 0,
+                "short_desc": "",
+                "sp_type": 1,
+                "desc_content": "<p>【充值对象】：全国移动2G/3G/4G手机用户充值；<br>【有效期限】：看菜单栏；<br>【流量类型】：全国2G/3G/4G流量；<br>【使用范围】：所充值流量全国范围内使用；<br>【充值限制】：流量王、随心王和转品牌套餐不得使用；<br>【注意事项】：由于用户误填写手机号码后充入别人账号，责任用户自行承担；<br>【特殊情况】：此产品只能充值全国移动的手机号，其他省份一概不支持；<br>【到帐时间】：一般10分钟左右，最晚不超过24小时，若不到账，请24小时后联系我们；<br>【查询方式】：发送CXLL至10086查询；<br>【其他问题】：充值成功一般有短信提醒，若未收到短信可咨询10086查询流量情况（流量查询）；流量无法抵扣超出的流量及话费！</p><p><br></p>",
+                "isp": "10086",
+                "package_list": [
+                    {
+                        "id": 447,
+                        "package": "1G日包",
+                        "sale_price": "3.75",
+                        "is_hot": 1,
+                        "order_tips": "",
+                        "yh_tips": "24小时有效",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 89
+                    },
+                    {
+                        "id": 448,
+                        "package": "2G日包",
+                        "sale_price": "5.95",
+                        "is_hot": 1,
+                        "order_tips": "",
+                        "yh_tips": "24小时有效",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 89
+                    },
+                    {
+                        "id": 449,
+                        "package": "5G7天",
+                        "sale_price": "11.60",
+                        "is_hot": 1,
+                        "order_tips": "",
+                        "yh_tips": "7天有效期",
+                        "buy_point": 0,
+                        "can_buy_point": 0,
+                        "reward_point": 0,
+                        "flow_id": 89
+                    }
+                ]
+            }
+        ]
+    },
+    "msg": "获取成功",
+    "phoneisp": ""
+}

@@ -1,0 +1,6 @@
+[2022-04-18 01:10:38] local.ERROR: Undefined index: rspCode {"exception":"[object] (ErrorException(code: 0): Undefined index: rspCode at /www/wwwroot/msgo.xyz/app/Http/Controllers/WeChat/Card/ApiController.php:72)"} 
+[2022-04-18 01:13:03] local.ERROR: Undefined index: rspCode {"exception":"[object] (ErrorException(code: 0): Undefined index: rspCode at /www/wwwroot/msgo.xyz/app/Http/Controllers/WeChat/Card/ApiController.php:72)"} 
+[2022-04-18 01:13:05] local.ERROR: Undefined index: rspCode {"exception":"[object] (ErrorException(code: 0): Undefined index: rspCode at /www/wwwroot/msgo.xyz/app/Http/Controllers/WeChat/Card/ApiController.php:72)"} 
+[2022-04-18 01:13:05] local.ERROR: Undefined index: rspCode {"exception":"[object] (ErrorException(code: 0): Undefined index: rspCode at /www/wwwroot/msgo.xyz/app/Http/Controllers/WeChat/Card/ApiController.php:72)"} 
+[2022-04-18 01:13:06] local.ERROR: Undefined index: rspCode {"exception":"[object] (ErrorException(code: 0): Undefined index: rspCode at /www/wwwroot/msgo.xyz/app/Http/Controllers/WeChat/Card/ApiController.php:72)"} 
+[2022-04-18 01:13:06] local.ERROR: Undefined index: rspCode {"exception":"[object] (ErrorException(code: 0): Undefined index: rspCode at /www/wwwroot/msgo.xyz/app/Http/Controllers/WeChat/Card/ApiController.php:72)"} 

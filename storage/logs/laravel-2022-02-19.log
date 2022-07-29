@@ -1,0 +1,80 @@
+[2022-02-19 00:13:53] local.INFO: 支付回调===>  
+[2022-02-19 00:13:53] local.INFO: 充值返回结果：  
+[2022-02-19 00:13:53] local.INFO: array (
+  'status' => 'failed',
+  'desc' => '用户状态异常',
+  'code' => '40',
+  'serialno' => NULL,
+  'bizOrderId' => NULL,
+  'itemId' => NULL,
+  'itemName' => NULL,
+  'itemFacePrice' => NULL,
+  'price' => NULL,
+  'amount' => NULL,
+  'carrierType' => NULL,
+  'areaCode' => NULL,
+  'success' => false,
+)  
+[2022-02-19 00:13:53] local.INFO: 发起退款  
+[2022-02-19 00:13:54] local.INFO: array (
+  'return_code' => 'SUCCESS',
+  'return_msg' => 'OK',
+  'appid' => 'wx397218daf538dc63',
+  'mch_id' => '1609178328',
+  'nonce_str' => 'ua7cd9K8wLRlO9IG',
+  'sign' => '83969009C73DF5E062462382CBE002BC',
+  'result_code' => 'SUCCESS',
+  'transaction_id' => '4200001313202202199869485632',
+  'out_trade_no' => '2022021910251485',
+  'out_refund_no' => '321053532370bb12eb33c65a87fb32c1',
+  'refund_id' => '50302001152022021917522585774',
+  'refund_channel' => NULL,
+  'refund_fee' => '4740',
+  'coupon_refund_fee' => '0',
+  'total_fee' => '4740',
+  'cash_fee' => '4740',
+  'coupon_refund_count' => '0',
+  'cash_refund_fee' => '4740',
+)  
+[2022-02-19 00:13:54] local.INFO: success  
+[2022-02-19 00:15:05] local.INFO: 退款回调===>  
+[2022-02-19 13:16:59] local.INFO: 支付回调===>  
+[2022-02-19 13:16:59] local.INFO: 充值返回结果：  
+[2022-02-19 13:16:59] local.INFO: array (
+  'status' => 'failed',
+  'desc' => '用户状态异常',
+  'code' => '40',
+  'serialno' => NULL,
+  'bizOrderId' => NULL,
+  'itemId' => NULL,
+  'itemName' => NULL,
+  'itemFacePrice' => NULL,
+  'price' => NULL,
+  'amount' => NULL,
+  'carrierType' => NULL,
+  'areaCode' => NULL,
+  'success' => false,
+)  
+[2022-02-19 13:16:59] local.INFO: 发起退款  
+[2022-02-19 13:17:00] local.INFO: array (
+  'return_code' => 'SUCCESS',
+  'return_msg' => 'OK',
+  'appid' => 'wx397218daf538dc63',
+  'mch_id' => '1609178328',
+  'nonce_str' => 'APsMtpXOMPKoVfzR',
+  'sign' => 'E38838C7C2FDD93F4BA2895FDE9688DE',
+  'result_code' => 'SUCCESS',
+  'transaction_id' => '4200001326202202194370530578',
+  'out_trade_no' => '2022021948971024',
+  'out_refund_no' => '4bba0e83b574073d1b1c91c53e3e47d1',
+  'refund_id' => '50300400972022021917538089765',
+  'refund_channel' => NULL,
+  'refund_fee' => '4775',
+  'coupon_refund_fee' => '0',
+  'total_fee' => '4775',
+  'cash_fee' => '4775',
+  'coupon_refund_count' => '0',
+  'cash_refund_fee' => '4775',
+)  
+[2022-02-19 13:17:00] local.INFO: success  
+[2022-02-19 13:18:11] local.INFO: 退款回调===>  
